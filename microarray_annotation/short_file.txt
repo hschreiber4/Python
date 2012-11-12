@@ -1,0 +1,55 @@
+     gene            190..255
+                     /gene="thrL"
+                     /locus_tag="UTI89_C0001"
+                     /db_xref="GeneID:3993026"
+     CDS             190..255
+                     /gene="thrL"
+                     /locus_tag="UTI89_C0001"
+                     /function="leader; amino acid biosynthesis: threonine"
+                     /note="involved in threonine biosynthesis; controls the
+                     expression of the thrLABC operon"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="thr operon leader peptide"
+                     /protein_id="YP_539042.1"
+                     /db_xref="GI:91209056"
+                     /db_xref="GeneID:3993026"
+     gene            336..2798
+                     /gene="thrA"
+                     /locus_tag="UTI89_C0002"
+                     /db_xref="GeneID:3993027"
+     CDS             336..2798
+                     /gene="thrA"
+                     /locus_tag="UTI89_C0002"
+                     /EC_number="1.1.1.13"
+                     /EC_number="2.7.2.4"
+                     /function="threonine biosynthesis"
+                     /note="multifunctional homotetrameric enzyme that
+                     catalyzes the phosphorylation of aspartate to form
+                     aspartyl-4-phosphate as well as conversion of aspartate
+                     semialdehyde to homoserine; functions in a number of amino
+                     acid biosynthetic pathways"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="bifunctional aspartokinase I/homoserine
+                     dehydrogenase I"
+                     /protein_id="YP_539043.1"
+                     /db_xref="GI:91209057"
+                     /db_xref="GeneID:3993027"
+     gene            2800..3732
+                     /gene="thrB"
+                     /locus_tag="UTI89_C0003"
+                     /db_xref="GeneID:3993028"
+     CDS             2800..3732
+                     /gene="thrB"
+                     /locus_tag="UTI89_C0003"
+                     /EC_number="2.7.1.39"
+                     /function="enzyme; amino acid biosynthesis: threonine"
+                     /note="catalyzes the formation of O-phospho-L-homoserine
+                     from L-homoserine in threonine biosynthesis from asparate"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="homoserine kinase"
+                     /protein_id="YP_539044.1"
+                     /db_xref="GI:91209058"
+                     /db_xref="GeneID:3993028"
