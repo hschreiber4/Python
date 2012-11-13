@@ -9,12 +9,13 @@ def isolate(search_term, search_line):
 	formatted_term = split_term[1].replace('\"','').replace('\n','')
 	return formatted_term
 
+#Opening the input file
+genfile = open(sys.argv[1])
+
 #Opening a writable file
-out_file=open('output.txt','wt')
+out_file=open(sys.argv[2],'wt')
 
-genfile = open('short_file.txt')
-#Hard coding the input file for easier coding to start with
-
+#Starting the loop with this version in order to have better access to following lines of code
 while True:
 	line = genfile.readline()
 #Now the searches begin
@@ -40,23 +41,28 @@ while True:
 		locus_tag = isolate('tag=', line)
 		out_file.write(locus_tag+'\t')
 
+# #Finding the protein product
+# 	elif re.search('/product=',line):
+# 		product_tag = isolate('product=', line)
+# 		if product_tag
+
 #Finding the function and isolating it
 	elif re.search('/function=', line):
 		function_tag = isolate('function=', line)
-		out_file.write(function_tag)
+		out_file.write('"'+function_tag)
 		while True:
 			fun_line=genfile.readline()
 			if re.search('/note=', fun_line):
 				note_tag = isolate('note=', fun_line)
-				out_file.write('\t'+note_tag)
-				# while True:
-				# 	note_line=genfile.readline()
-				# 	if re.search('/start=', note_line):
-				# 		break	
-				# 	else:
-				# 		split_note_line = note_line.split()
-				# 		for word in split_note_line:
-				# 			out_file.write(word+' ')
+				out_file.write('\t"'+note_tag)
+				while True:
+					note_line=genfile.readline()
+					if re.search('_start', note_line):
+						break
+					else:
+						split_note_line=note_line.split()
+						for thing in split_note_line:
+							out_file.write(thing+' ')
 				break
 			else:
 				split_fun_line = fun_line.split()
