@@ -1,1 +1,3 @@
-190	255	65336	2798	24622800	3732	932
+190	255	65	thrL	UTI89_C0001	thrL	UTI89_C0001	leader; amino acid biosynthesis: threonine	YP_539042.1	GI:91209056
+336	2798	2462	thrA	UTI89_C0002	thrA	UTI89_C0002	threonine biosynthesis	YP_539043.1	GI:91209057
+2800	3732	932	thrB	UTI89_C0003	thrB	UTI89_C0003	enzyme; amino acid biosynthesis: threonine	YP_539044.1	GI:91209058

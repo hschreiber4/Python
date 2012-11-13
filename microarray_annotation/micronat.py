@@ -16,8 +16,6 @@ out_file=open('output.txt','wt')
 for line in open('short_file.txt'):
 
 #Now the searches begin
-	# if re.search('CDS') and re.search('..'):
-	# 	pass
 #Finding the gene location and then isolating the numbers
 	if re.search('gene', line) and re.search('\.\.', line):
 		gene_loc = line.split('gene')
@@ -29,23 +27,27 @@ for line in open('short_file.txt'):
 #Finding the gene name and isolating it
 	elif re.search('/gene',line):
 		gene_tag = isolate('/gene=',line)
+		out_file.write(gene_tag+'\t')
 
 #Finding the locus tag and isolating it
 	elif re.search('/locus_tag',line):
 		locus_tag = isolate('tag=', line)
+		out_file.write(locus_tag+'\t')
 
 #Finding the function and isolating it
 	elif re.search('/function', line):
 		function_tag = isolate('function=', line)
+		out_file.write(function_tag+'\t')
 
 #Finding the protein id and isolating it
 	elif re.search('protein_id=',line):
 		protein_tag = isolate('_id=', line)
+		out_file.write(protein_tag+'\t')
 
 #Finding the GI and isolating it
 	elif re.search('"GI:',line):
 		GI_tag = isolate('xref=',line)
-
+		out_file.write(GI_tag+'\n')
 
 
 
