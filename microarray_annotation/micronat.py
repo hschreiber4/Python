@@ -42,3 +42,8 @@ for line in open('short_file.txt'):
 #Finding the note and isolating it
 	elif re.search('/note=',line):
 		note_tag = isolate('/note=',line)
+		while True:
+			note_lines=line.readline()
+			if re.match([a-z],note_lines):
+				print note_lines
+			elif re.match()
