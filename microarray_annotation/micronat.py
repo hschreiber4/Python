@@ -47,24 +47,20 @@ while True:
 		while True:
 			fun_line=genfile.readline()
 			if re.search('/note=', fun_line):
+				note_tag = isolate('note=', fun_line)
+				out_file.write('\t'+note_tag)
+				# while True:
+				# 	note_line=genfile.readline()
+				# 	if re.search('/start=', note_line):
+				# 		break	
+				# 	else:
+				# 		split_note_line = note_line.split()
+				# 		for word in split_note_line:
+				# 			out_file.write(word+' ')
 				break
 			else:
 				split_fun_line = fun_line.split()
 				for word in split_fun_line:
-					out_file.write(word+' ')
-
-#Finding the note and isolating it
-	elif re.search('bind', line):
-		note_tag = isolate('note=', line)
-		print 'Note search working'
-		out_file.write('\t'+note_tag)
-		while True:
-			note_line=genfile.readline()
-			if re.search('/start=', note_line):
-				break
-			else:
-				split_note_line = note_line.split()
-				for word in split_note_line:
 					out_file.write(word+' ')
 
 #Finding the protein id and isolating it
