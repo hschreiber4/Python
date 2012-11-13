@@ -9,17 +9,22 @@ def isolate(search_term, search_line):
 	formatted_term = split_term[1].replace('\"','').replace('\n','')
 	return formatted_term
 
-#Hard coding the input file for easier coding to start with
+#Opening a writable file
+out_file=open('output.txt','wt')
 
+#Hard coding the input file for easier coding to start with
 for line in open('short_file.txt'):
 
 #Now the searches begin
+	# if re.search('CDS') and re.search('..'):
+	# 	pass
 #Finding the gene location and then isolating the numbers
 	if re.search('gene', line) and re.search('\.\.', line):
 		gene_loc = line.split('gene')
 		formatted_gene_loc = gene_loc[1].replace(' ','').rstrip('\n')
 		gene_boundaries = formatted_gene_loc.split('..')
 		gene_size=int(gene_boundaries[1])-int(gene_boundaries[0])
+		out_file.write(str(gene_boundaries[0])+'\t'+str(gene_boundaries[1])+'\t'+str(gene_size)+'\t')
 
 #Finding the gene name and isolating it
 	elif re.search('/gene',line):
@@ -41,8 +46,7 @@ for line in open('short_file.txt'):
 	elif re.search('"GI:',line):
 		GI_tag = isolate('xref=',line)
 
-#Making a print statement
-	# print '{gene_start}\t{gene_end}\t{gene_length}\t{gene_name}\t{locus_name}\t{function_name}\t{protein_name}\t{GI_name}'.format(gene_start=gene_boundaries[0], gene_end=gene_boundaries[1], gene_length=gene_size, gene_name=gene_size, locus_name=locus_tag, function_name=function_tag, protein_name=protein_tag, GI_name=GI_tag)
+
 
 
 # #Finding the note and isolating it
