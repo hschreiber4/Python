@@ -13,19 +13,23 @@ def isolate(search_term, search_line):
 out_file=open('output.txt','wt')
 
 #Hard coding the input file for easier coding to start with
-for line in open('short_file.txt'):
+for line in open('UTI89_genome.txt'):
 
 #Now the searches begin
 #Finding the gene location and then isolating the numbers
 	if re.search('gene', line) and re.search('\.\.', line):
-		gene_loc = line.split('gene')
-		formatted_gene_loc = gene_loc[1].replace(' ','').rstrip('\n')
-		gene_boundaries = formatted_gene_loc.split('..')
-		gene_size=int(gene_boundaries[1])-int(gene_boundaries[0])
-		out_file.write(str(gene_boundaries[0])+'\t'+str(gene_boundaries[1])+'\t'+str(gene_size)+'\t')
+		if re.search('complement',line):
+			line.replace('complement','').replace('\(','').replace('\)','')
+		
+		else:
+			gene_loc = line.split('gene')
+			formatted_gene_loc = gene_loc[1].replace(' ','').rstrip('\n')
+			gene_boundaries = formatted_gene_loc.split('..')
+			gene_size=int(gene_boundaries[1])-int(gene_boundaries[0])
+			out_file.write(str(gene_boundaries[0])+'\t'+str(gene_boundaries[1])+'\t'+str(gene_size)+'\t')
 
 #Finding the gene name and isolating it
-	elif re.search('/gene',line):
+	elif re.search('/gene=',line):
 		gene_tag = isolate('/gene=',line)
 		out_file.write(gene_tag+'\t')
 
@@ -48,15 +52,3 @@ for line in open('short_file.txt'):
 	elif re.search('"GI:',line):
 		GI_tag = isolate('xref=',line)
 		out_file.write(GI_tag+'\n')
-
-
-
-# #Finding the note and isolating it
-# 	elif re.search('/note=',line):
-# 		note_tag = isolate('/note=',line)
-# 		while True:
-# 			note_lines=line.read()
-# 			if re.search('/codon_start',note_lines):
-# 				break
-# 			else:
-# 				print note_lines
