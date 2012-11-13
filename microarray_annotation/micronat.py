@@ -12,9 +12,11 @@ def isolate(search_term, search_line):
 #Opening a writable file
 out_file=open('output.txt','wt')
 
+genfile = open('short_file.txt')
 #Hard coding the input file for easier coding to start with
-for line in open('UTI89_genome.txt'):
-
+while True:
+	line = genfile.readline()
+	print line
 #Now the searches begin
 #Finding the gene location and then isolating the numbers
 	if re.search('gene', line) and re.search('\.\.', line):
@@ -34,14 +36,13 @@ for line in open('UTI89_genome.txt'):
 		out_file.write(gene_tag+'\t')
 
 #Finding the locus tag and isolating it
-	elif re.search('/locus_tag',line):
+	elif re.search('/locus_tag=',line):
 		locus_tag = isolate('tag=', line)
 		out_file.write(locus_tag+'\t')
 
 #Finding the function and isolating it
-	elif re.search('/function', line):
+	elif re.search('/function=', line):
 		function_tag = isolate('function=', line)
-		out_file.write(function_tag+'\t')
 
 #Finding the protein id and isolating it
 	elif re.search('protein_id=',line):
@@ -52,3 +53,15 @@ for line in open('UTI89_genome.txt'):
 	elif re.search('"GI:',line):
 		GI_tag = isolate('xref=',line)
 		out_file.write(GI_tag+'\n')
+
+
+
+# #Finding the note and isolating it
+# 	elif re.search('/note=',line):
+# 		note_tag = isolate('/note=',line)
+# 		while True:
+# 			note_lines=line.read()
+# 			if re.search('/codon_start',note_lines):
+# 				break
+# 			else:
+# 				print note_lines

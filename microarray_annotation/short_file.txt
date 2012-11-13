@@ -53,3 +53,23 @@
                      /protein_id="YP_539044.1"
                      /db_xref="GI:91209058"
                      /db_xref="GeneID:3993028"
+                          gene            14219..15349
+                     /gene="dnaJ"
+                     /locus_tag="UTI89_C0017"
+                     /db_xref="GeneID:3993042"
+     CDS             14219..15349
+                     /gene="dnaJ"
+                     /locus_tag="UTI89_C0017"
+                     /function="factor; folding and ushering proteins:
+                     chaperones"
+                     /note="chaperone Hsp40; co-chaperone with DnaK;
+                     Participates actively in the response to hyperosmotic and
+                     heat shock by preventing the aggregation of
+                     stress-denatured proteins and by disaggregating proteins,
+                     also in an autonomous, dnaK-independent fashion"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="molecular chaperone DnaJ"
+                     /protein_id="YP_539058.1"
+                     /db_xref="GI:91209072"
+                     /db_xref="GeneID:3993042"
