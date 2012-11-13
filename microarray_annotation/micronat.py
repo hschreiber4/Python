@@ -46,22 +46,24 @@ while True:
 		out_file.write(function_tag)
 		while True:
 			fun_line=genfile.readline()
-			if re.search('/note=', fun_line):
-				note_tag = isolate('note=', fun_line)
-				out_file.write('\t'+note_tag)
-				# while True:
-				# 	note_line=genfile.readline()
-				# 	if re.search('/start=', note_line):
-				# 		break	
-				# 	else:
-				# 		split_note_line = note_line.split()
-				# 		for word in split_note_line:
-				# 			out_file.write(word+' ')
+			if re.search('/note=', line):
 				break
 			else:
 				split_fun_line = fun_line.split()
 				for word in split_fun_line:
 					out_file.write(word+' ')
+
+	# elif re.search('/note=', line):
+	# 	note_tag = isolate('note=', line)
+	# 	out_file.write('\t'+note_tag)
+	# 	while True:
+	# 		note_line=genfile.readline()
+	# 		if re.search('/start=', note_line):
+	# 			break	
+	# 		else:
+	# 			split_note_line = note_line.split()
+	# 			for note_term in split_note_line:
+	# 				out_file.write(note_term+' ')
 
 #Finding the protein id and isolating it
 	elif re.search('protein_id=',line):
