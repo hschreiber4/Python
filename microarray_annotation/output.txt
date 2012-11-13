@@ -1,0 +1,6 @@
+190	255	65	thrL	UTI89_C0001	thrL	UTI89_C0001	leader; amino acid biosynthesis: threonine	YP_539042.1	GI:91209056
+336	2798	2462	thrA	UTI89_C0002	thrA	UTI89_C0002	threonine biosynthesis	YP_539043.1	GI:91209057
+2800	3732	932	thrB	UTI89_C0003	thrB	UTI89_C0003	enzyme; amino acid biosynthesis: threonine	YP_539044.1	GI:91209058
+14219	15349	1130	dnaJ	UTI89_C0017	dnaJ	UTI89_C0017	factor; folding and ushering proteins:chaperones" 	YP_539058.1	GI:91209072
+20115	21281	1166	nhaA	UTI89_C0022	nhaA	UTI89_C0022	transport; transport of small molecules:cations" 	YP_539063.1	GI:91209077
+rpsT	UTI89_C0025	rpsT	UTI89_C0025	structural component; macromolecule synthesis,modification: ribosomal proteins" 	YP_539066.1	GI:91209080

@@ -73,3 +73,41 @@
                      /protein_id="YP_539058.1"
                      /db_xref="GI:91209072"
                      /db_xref="GeneID:3993042"
+                          gene            20115..21281
+                     /gene="nhaA"
+                     /locus_tag="UTI89_C0022"
+                     /db_xref="GeneID:3992739"
+     CDS             20115..21281
+                     /gene="nhaA"
+                     /locus_tag="UTI89_C0022"
+                     /EC_number="3.4.-.-"
+                     /function="transport; transport of small molecules:
+                     cations"
+                     /note="exports sodium by using the electrochemical proton
+                     gradient to allow protons into the cell; functions in
+                     adaptation to high salinity and alkaline pH; activity
+                     increases at higher pH; downregulated at acidic pH"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="pH-dependent sodium/proton antiporter"
+                     /protein_id="YP_539063.1"
+                     /db_xref="GI:91209077"
+                     /db_xref="GeneID:3992739"
+                          gene            complement(22342..22605)
+                     /gene="rpsT"
+                     /locus_tag="UTI89_C0025"
+                     /db_xref="GeneID:3992742"
+     CDS             complement(22342..22605)
+                     /gene="rpsT"
+                     /locus_tag="UTI89_C0025"
+                     /function="structural component; macromolecule synthesis,
+                     modification: ribosomal proteins"
+                     /note="binds directly to the 16S rRNA and is involved in
+                     post-translational inhibition of arginine and ornithine
+                     decarboxylase"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="30S ribosomal protein S20"
+                     /protein_id="YP_539066.1"
+                     /db_xref="GI:91209080"
+                     /db_xref="GeneID:3992742"

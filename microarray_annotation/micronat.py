@@ -14,9 +14,9 @@ out_file=open('output.txt','wt')
 
 genfile = open('short_file.txt')
 #Hard coding the input file for easier coding to start with
+
 while True:
 	line = genfile.readline()
-	print line
 #Now the searches begin
 #Finding the gene location and then isolating the numbers
 	if re.search('gene', line) and re.search('\.\.', line):
@@ -43,25 +43,39 @@ while True:
 #Finding the function and isolating it
 	elif re.search('/function=', line):
 		function_tag = isolate('function=', line)
+		out_file.write(function_tag)
+		while True:
+			fun_line=genfile.readline()
+			if re.search('/note=', fun_line):
+				break
+			else:
+				split_fun_line = fun_line.split()
+				for word in split_fun_line:
+					out_file.write(word+' ')
+
+#Finding the note and isolating it
+	elif re.search('bind', line):
+		note_tag = isolate('note=', line)
+		print 'Note search working'
+		out_file.write('\t'+note_tag)
+		while True:
+			note_line=genfile.readline()
+			if re.search('/start=', note_line):
+				break
+			else:
+				split_note_line = note_line.split()
+				for word in split_note_line:
+					out_file.write(word+' ')
 
 #Finding the protein id and isolating it
 	elif re.search('protein_id=',line):
 		protein_tag = isolate('_id=', line)
-		out_file.write(protein_tag+'\t')
+		out_file.write('\t'+protein_tag+'\t')
 
 #Finding the GI and isolating it
 	elif re.search('"GI:',line):
 		GI_tag = isolate('xref=',line)
 		out_file.write(GI_tag+'\n')
 
-
-
-# #Finding the note and isolating it
-# 	elif re.search('/note=',line):
-# 		note_tag = isolate('/note=',line)
-# 		while True:
-# 			note_lines=line.read()
-# 			if re.search('/codon_start',note_lines):
-# 				break
-# 			else:
-# 				print note_lines
+	elif line == (''):
+		break
