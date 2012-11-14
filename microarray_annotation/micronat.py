@@ -10,7 +10,7 @@ def isolate(search_term, search_line):
 	return formatted_term
 
 #Opening the input file
-genfile = open('UTI89_genome.txt')
+genfile = open('UTI89_genome.txt') 
 
 #Opening a writable file
 out_file=open('output.txt','wt')
