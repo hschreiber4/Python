@@ -10,10 +10,10 @@ def isolate(search_term, search_line):
 	return formatted_term
 
 #Opening the input file
-genfile = open(sys.argv[1])
+genfile = open('UTI89_genome.txt')
 
 #Opening a writable file
-out_file=open(sys.argv[2],'wt')
+out_file=open('output.txt','wt')
 
 #Starting the loop with this version in order to have better access to following lines of code
 while True:
@@ -41,20 +41,25 @@ while True:
 		locus_tag = isolate('tag=', line)
 		out_file.write(locus_tag+'\t')
 
-# #Finding the protein product
-# 	elif re.search('/product=',line):
-# 		product_tag = isolate('product=', line)
-# 		if product_tag
+#Finding the protein product
+	elif re.search('/product=',line):
+		product_tag = isolate('product=', line)
+
+		if re.search('hypothetical',product_tag):
+			out_file.write(' \t \t'+product_tag+'\t')
+		else:
+			out_file.write('\t'+product_tag+'\t')
 
 #Finding the function and isolating it
 	elif re.search('/function=', line):
 		function_tag = isolate('function=', line)
-		out_file.write('"'+function_tag)
+		out_file.write(function_tag+' ')
 		while True:
 			fun_line=genfile.readline()
 			if re.search('/note=', fun_line):
 				note_tag = isolate('note=', fun_line)
-				out_file.write('\t"'+note_tag)
+				out_file.write('\t')
+				out_file.write(note_tag+' ')
 				while True:
 					note_line=genfile.readline()
 					if re.search('_start', note_line):
@@ -72,7 +77,7 @@ while True:
 #Finding the protein id and isolating it
 	elif re.search('protein_id=',line):
 		protein_tag = isolate('_id=', line)
-		out_file.write('\t'+protein_tag+'\t')
+		out_file.write(protein_tag+'\t')
 
 #Finding the GI and isolating it
 	elif re.search('"GI:',line):
