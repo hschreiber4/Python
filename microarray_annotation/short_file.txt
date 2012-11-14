@@ -111,3 +111,12 @@
                      /protein_id="YP_539066.1"
                      /db_xref="GI:91209080"
                      /db_xref="GeneID:3992742"
+                          gene            228524..230065
+                     /gene="rrsH"
+                     /locus_tag="UTI89_C0217"
+                     /db_xref="GeneID:3994577"
+     rRNA            228524..230065
+                     /gene="rrsH"
+                     /locus_tag="UTI89_C0217"
+                     /product="16S ribosomal RNA"
+                     /db_xref="GeneID:3994577"
