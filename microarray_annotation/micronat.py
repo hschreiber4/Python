@@ -22,7 +22,15 @@ while True:
 #Finding the gene location and then isolating the numbers
 	if re.search('gene', line) and re.search('\.\.', line):
 		if re.search('complement',line):
-			line.replace('complement','').replace('\(','').replace('\)','')
+			line.split('complement')
+			gene_loc = line.split('gene')
+			formatted_gene_loc = gene_loc[1].strip().strip('complement').strip('\(').strip('\)').rstrip('\n')
+			print formatted_gene_loc
+			gene_boundaries = formatted_gene_loc.split('..')
+			print gene_boundaries
+			gene_size=int(gene_boundaries[1])-int(gene_boundaries[0])
+			print gene_size
+			out_file.write(str(gene_boundaries[0])+'\t'+str(gene_boundaries[1])+'\t'+str(gene_size)+'\t')
 		
 		else:
 			gene_loc = line.split('gene')
