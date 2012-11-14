@@ -13,6 +13,16 @@
 import re
 import sys
 
+#A usage statement to tell the user how to use the script
+if len(sys.argv)!=3:
+	print '\n'+'\n'+'\n'+'To use micronat, type: python micronat.py {input Genbank file} {output text file}'+'\n'
+	if len(sys.argv)<3:
+		print 'You forgot something!'+'\n'
+	elif len(sys.argv)>3:
+		print 'You added something!'+'\n'
+	sys.exit()
+
+
 #This function takes a search term given in the elif search blocks and
 #isolates the relevent data from the line.
 def isolate(search_term, search_line):
@@ -36,6 +46,9 @@ function_tag='no_function_annotation'
 note_tag='no_note_annotation'
 protein_tag='no_protein_ID'
 GI_tag='no_GI_number'
+
+#This line writes some headers into the file
+out_file.write('Gene_start'+'\t'+'Gene_end'+'\t'+'Gene_size'+'\t'+'Gene_name'+'\t'+'Locus'+'\t'+'Product'+'\t'+'Function'+'\t'+'Note'+'\t'+'Protein_ID'+'\t'+'GI_number'+'\n')
 
 #Starting the loop with this version in order to have better access to following lines of code, rather than using a for .. in loop.
 while True:

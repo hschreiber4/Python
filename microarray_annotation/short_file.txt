@@ -120,3 +120,301 @@
                      /locus_tag="UTI89_C0217"
                      /product="16S ribosomal RNA"
                      /db_xref="GeneID:3994577"
+                          gene            3417452..3418501
+                     /locus_tag="UTI89_C3482"
+                     /db_xref="GeneID:3993888"
+     CDS             3417452..3418501
+                     /locus_tag="UTI89_C3482"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="Yqi fimbrial adhesin"
+                     /protein_id="YP_542460.1"
+                     /db_xref="GI:91212474"
+                     /db_xref="GeneID:3993888"
+     gene            complement(3418555..3419208)
+                     /gene="ribB"
+                     /locus_tag="UTI89_C3483"
+                     /db_xref="GeneID:3993889"
+     CDS             complement(3418555..3419208)
+                     /gene="ribB"
+                     /locus_tag="UTI89_C3483"
+                     /EC_number="3.5.4.25"
+                     /function="enzyme; biosynthesis of cofactors, carriers:
+                     riboflavin"
+                     /note="DHBP synthase; functions during riboflavin
+                     biosynthesis"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="3,4-dihydroxy-2-butanone 4-phosphate synthase"
+                     /protein_id="YP_542461.1"
+                     /db_xref="GI:91212475"
+                     /db_xref="GeneID:3993889"
+     gene            3419522..3419881
+                     /gene="yqiC"
+                     /locus_tag="UTI89_C3484"
+                     /db_xref="GeneID:3993890"
+     CDS             3419522..3419881
+                     /gene="yqiC"
+                     /locus_tag="UTI89_C3484"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="YP_542462.1"
+                     /db_xref="GI:91212476"
+                     /db_xref="GeneID:3993890"
+     gene            complement(3419916..3420122)
+                     /gene="glgS"
+                     /locus_tag="UTI89_C3485"
+                     /db_xref="GeneID:3993891"
+     CDS             complement(3419916..3420122)
+                     /gene="glgS"
+                     /locus_tag="UTI89_C3485"
+                     /function="enzyme; macromolecule synthesis, modification:
+                     polysaccharides - (cytoplasmic)"
+                     /note="Involved in glycogen synthesis. May be involved in
+                     glycogen priming"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="glycogen synthesis protein GlgS"
+                     /protein_id="YP_542463.1"
+                     /db_xref="GI:91212477"
+                     /db_xref="GeneID:3993891"
+     gene            3420386..3421015
+                     /gene="yqiJ"
+                     /locus_tag="UTI89_C3486"
+                     /db_xref="GeneID:3993892"
+     CDS             3420386..3421015
+                     /gene="yqiJ"
+                     /locus_tag="UTI89_C3486"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="YP_542464.1"
+                     /db_xref="GI:91212478"
+                     /db_xref="GeneID:3993892"
+     gene            3421042..3422703
+                     /gene="yqiK"
+                     /locus_tag="UTI89_C3487"
+                     /db_xref="GeneID:3993893"
+     CDS             3421042..3422703
+                     /gene="yqiK"
+                     /locus_tag="UTI89_C3487"
+                     /function="membrane"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="YP_542465.1"
+                     /db_xref="GI:91212479"
+                     /db_xref="GeneID:3993893"
+     gene            complement(3423122..3424555)
+                     /locus_tag="UTI89_C3488"
+                     /db_xref="GeneID:3993894"
+     CDS             complement(3423122..3424555)
+                     /locus_tag="UTI89_C3488"
+                     /EC_number="2.7.-.-"
+                     /note="catalyzes the phosphorylation of
+                     D-glycero-D-manno-heptose 7-phosphate to form
+                     D,D-heptose-1,7-bisphosphate and catalyzes transfer of ADP
+                     to D-glycero-D-manno-heptose 1-phosphate forming
+                     ADP-D,D-heptose"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="bifunctional heptose 7-phosphate kinase/heptose
+                     1-phosphate adenyltransferase"
+                     /protein_id="YP_542466.1"
+                     /db_xref="GI:91212480"
+                     /db_xref="GeneID:3993894"
+     gene            complement(3424603..3427443)
+                     /gene="glnE"
+                     /locus_tag="UTI89_C3489"
+                     /db_xref="GeneID:3993895"
+     CDS             complement(3424603..3427443)
+                     /gene="glnE"
+                     /locus_tag="UTI89_C3489"
+                     /EC_number="2.7.7.42"
+                     /function="enzyme; proteins - translation and
+                     modification"
+                     /note="catalyzes the ATP-dependent addition of AMP to a
+                     subunit of glutamine synthetase; also catalyzes the
+                     reverse reaction - deadenylation;
+                     adenylation/deadenylation of glutamine synthetase subunits
+                     is important for the regulation of this enzyme"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="bifunctional glutamine-synthetase
+                     adenylyltransferase/deadenyltransferase"
+                     /protein_id="YP_542467.2"
+                     /db_xref="GI:162138373"
+                     /db_xref="GeneID:3993895"
+     gene            complement(3427466..3428767)
+                     /gene="ygiF"
+                     /locus_tag="UTI89_C3490"
+                     /db_xref="GeneID:3993896"
+     CDS             complement(3427466..3428767)
+                     /gene="ygiF"
+                     /locus_tag="UTI89_C3490"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /protein_id="YP_542468.1"
+                     /db_xref="GI:91212482"
+                     /db_xref="GeneID:3993896"
+     gene            3429009..3429629
+                     /gene="ygiM"
+                     /locus_tag="UTI89_C3491"
+                     /db_xref="GeneID:3993897"
+     CDS             3429009..3429629
+                     /gene="ygiM"
+                     /locus_tag="UTI89_C3491"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="signal transduction protein"
+                     /protein_id="YP_542469.1"
+                     /db_xref="GI:91212483"
+                     /db_xref="GeneID:3993897"
+     gene            3429693..3430931
+                     /gene="cca"
+                     /locus_tag="UTI89_C3492"
+                     /db_xref="GeneID:3993898"
+     CDS             3429693..3430931
+                     /gene="cca"
+                     /locus_tag="UTI89_C3492"
+                     /EC_number="2.7.7.72"
+                     /function="enzyme; amino acyl tRNA syn; tRNA modific'n"
+                     /note="catalyzes the addition and repair of the essential
+                     3'-terminal CCA sequence in tRNAs without using a nucleic
+                     acid template; phosphohydrolase activities include
+                     hydrolysis of pyrophosphate, 5'-nucleoside tri- and
+                     diphosphates, NADP, and 2'-AMP with the production of Pi,
+                     metal-dependent phosphodiesterase activity for 2',3'-cAMP,
+                     2',3'-cGMP, and 2',3'-cCMP, and hydrolysis 2',3'-cyclic
+                     substrates with the formation of 2'-nucleotides and
+                     3'-nucleotides; these phosphohydrolase activities are
+                     probably involved in the repair of the tRNA 3'-CCA
+                     terminus degraded by intracellular RNases"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="multifunctional tRNA nucleotidyl
+                     transferase/2'3'-cyclic
+                     phosphodiesterase/2'nucleotidase/phosphatase"
+                     /protein_id="YP_542470.1"
+                     /db_xref="GI:91212484"
+                     /db_xref="GeneID:3993898"
+     gene            complement(3431119..3431943)
+                     /gene="bacA"
+                     /locus_tag="UTI89_C3493"
+                     /db_xref="GeneID:3993899"
+     CDS             complement(3431119..3431943)
+                     /gene="bacA"
+                     /locus_tag="UTI89_C3493"
+                     /EC_number="3.6.1.27"
+                     /function="transport; drug/analog sensitivity"
+                     /note="BacA; phosphatase activity in Escherichia coli not
+                     kinase; involved in bacitracin resistance as bacitracin
+                     supposedly sequesters undecaprenyl disphosphate which
+                     reduces the pool of lipid carrier available to the cell"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="undecaprenyl pyrophosphate phosphatase"
+                     /protein_id="YP_542471.1"
+                     /db_xref="GI:91212485"
+                     /db_xref="GeneID:3993899"
+     gene            complement(3432031..3432402)
+                     /gene="folB"
+                     /locus_tag="UTI89_C3494"
+                     /db_xref="GeneID:3993900"
+     CDS             complement(3432031..3432402)
+                     /gene="folB"
+                     /locus_tag="UTI89_C3494"
+                     /EC_number="4.1.2.25"
+                     /function="enzyme"
+                     /note="catalyzes the conversion of 7,8-dihydroneopterin to
+                     6-hydroxymethyl-7,8-dihydropterin and can also catalyze
+                     the epimerization of carbon 2' of dihydroneopterin and
+                     dihydromonapterin"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="bifunctional dihydroneopterin
+                     aldolase/dihydroneopterin triphosphate 2'-epimerase"
+                     /protein_id="YP_542472.1"
+                     /db_xref="GI:91212486"
+                     /db_xref="GeneID:3993900"
+     gene            3432504..3433121
+                     /gene="ygiH"
+                     /locus_tag="UTI89_C3495"
+                     /db_xref="GeneID:3993901"
+     CDS             3432504..3433121
+                     /gene="ygiH"
+                     /locus_tag="UTI89_C3495"
+                     /note="involved in acylation of glycerol-3-phosphate to
+                     form 1-acyl-glycerol-3 phosphate for use in phospholipid
+                     biosynthesis; functions with PlsX"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="glycerol-3-phosphate acyltransferase PlsY"
+                     /protein_id="YP_542473.1"
+                     /db_xref="GI:91212487"
+                     /db_xref="GeneID:3993901"
+     gene            complement(3433134..3434114)
+                     /gene="ygiP"
+                     /locus_tag="UTI89_C3496"
+                     /db_xref="GeneID:3993902"
+     CDS             complement(3433134..3434114)
+                     /gene="ygiP"
+                     /locus_tag="UTI89_C3496"
+                     /function="regulator"
+                     /note="activates expression of genes required for
+                     L-tartrate-dependent anaerobic growth on glycerol"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="transcriptional activator TtdR"
+                     /protein_id="YP_542474.1"
+                     /db_xref="GI:91212488"
+                     /db_xref="GeneID:3993902"
+     gene            3434273..3435184
+                     /gene="ttdA"
+                     /locus_tag="UTI89_C3497"
+                     /db_xref="GeneID:3993903"
+     CDS             3434273..3435184
+                     /gene="ttdA"
+                     /locus_tag="UTI89_C3497"
+                     /EC_number="4.2.1.32"
+                     /function="enzyme; energy metabolism, carbon:
+                     fermentation"
+                     /note="Involved in the tartrate degradation pathway"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="tartrate dehydratase subunit alpha"
+                     /protein_id="YP_542475.1"
+                     /db_xref="GI:91212489"
+                     /db_xref="GeneID:3993903"
+     gene            3435181..3435786
+                     /gene="ttdB"
+                     /locus_tag="UTI89_C3498"
+                     /db_xref="GeneID:3993904"
+     CDS             3435181..3435786
+                     /gene="ttdB"
+                     /locus_tag="UTI89_C3498"
+                     /EC_number="4.2.1.32"
+                     /function="enzyme; energy metabolism, carbon:
+                     fermentation"
+                     /note="Involved in the tartrate degradation pathway"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="L(+)-tartrate dehydratase subunit beta"
+                     /protein_id="YP_542476.1"
+                     /db_xref="GI:91212490"
+                     /db_xref="GeneID:3993904"
+     gene            3435834..3437297
+                     /gene="ygjE"
+                     /locus_tag="UTI89_C3499"
+                     /db_xref="GeneID:3993905"
+     CDS             3435834..3437297
+                     /gene="ygjE"
+                     /locus_tag="UTI89_C3499"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="tartrate carrier/transporter"
+                     /protein_id="YP_542477.1"
+                     /db_xref="GI:91212491"
+                     /db_xref="GeneID:3993905"
