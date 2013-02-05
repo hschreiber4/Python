@@ -5,19 +5,30 @@ import re
 
 print 'This program will call fall in a directory and pass them through Glimmer and multi-extract'+'\n'
 
-#This section 
-files = os.listdir('/home/comp/shlab/hschreiber/assembled_genomes')
+#A usage statement to tell the user how to use the script
+if len(sys.argv)!=3:
+	print '\n'+'\n'+'\n'+'To use this script, type: python glimmer_orf_extraction.py {input directory [USE THE FULL PATH WITH NO END SLASH]} {output directory [USE THE FULL PATH AND NO END SLASH}'+'\n'
+	if len(sys.argv)<3:
+		print 'You forgot something!'+'\n'
+	elif len(sys.argv)>3:
+		print 'You added something!'+'\n'
+	sys.exit()
+
+
+#This section loads the 
+files = os.listdir(sys.argv[1])
 
 for filename in files:
 	if filename.endswith('.fa'):
 		print 'Working on '+filename.rstrip('.fa')
 
+		#CHANGING workingdir TO sys.argv[2].IF FAILS, CHANGEBACK ALSO GOES HERE WITH THE MKDIR COMMAND COMMENTED.
 		#Making the directory for the file.
 		workingdir='/home/comp/shlab/hschreiber/predicted_orfs/'+filename.rstrip('.fa')+'_glimresults'
-		# os.mkdir(workingdir)
+		#os.mkdir(workingdir)
 
 		#Setting the Glimmer command
-		glimmercmd='/home/comp/shlab/hschreiber/glimmer3.02/sample-run/g3-iterated.csh /home/comp/shlab/hschreiber/assembled_genomes/'+filename+' '+workingdir+'/'+filename.rstrip('.fa')
+		glimmercmd='/home/comp/shlab/hschreiber/glimmer3.02/scripts/g3-iterated.csh /home/comp/shlab/hschreiber/assembled_genomes/'+filename+' '+workingdir+'/'+filename.rstrip('.fa')
 		subprocess.call(glimmercmd, shell=True)
 
 		if os.path.exists(workingdir+'/'+filename.rstrip('.fa')+'.predict')==True:
@@ -45,7 +56,7 @@ for filename in files:
 				#When the file runs out of lines, end the while loop
 				if line == (''):
 					break
-
+			#This section is a horribly inelegent way of reformatting the columns of the prediction coordinates.
 				else:
 					split = line.split()
 					if split != 1:
@@ -54,6 +65,7 @@ for filename in files:
 			infile.close()
 			outfile.close()
 
+		#This section will perform the multi-extract command using the formatted coordinates file.  They will be placed in the output directory named in the command line.
 		if os.path.exists(workingdir+'/'+filename.rstrip('.fa')+'_formatted.predict')==True:
 			print 'Extracting FASTA ORFs from '+filename
 			if os.path.exists(workingdir+'/'+filename.rstrip('.fa')+'_formatted.predict')==True:
