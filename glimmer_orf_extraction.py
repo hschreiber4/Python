@@ -3,7 +3,7 @@ import subprocess
 import os
 import re
 
-print 'This program will call fall in a directory and pass them through Glimmer and multi-extract'+'\n'
+print 'This program will call fall in a directory and pass them through Glimmer and multi-extract.  This script is meant for E5B2 - Sequencing of Clinical Isolates.'+'\n'
 
 #A usage statement to tell the user how to use the script
 if len(sys.argv)!=3:
@@ -15,8 +15,12 @@ if len(sys.argv)!=3:
 	sys.exit()
 
 
-#This section loads the 
+#This section loads the files.
 files = os.listdir(sys.argv[1])
+
+#This makes the directory
+os.mkdir(sys.argv[2])
+print ('Making the directory '+sys.argv[2])
 
 for filename in files:
 	if filename.endswith('.fa'):
@@ -24,23 +28,23 @@ for filename in files:
 
 		#CHANGING workingdir TO sys.argv[2].IF FAILS, CHANGEBACK ALSO GOES HERE WITH THE MKDIR COMMAND COMMENTED.
 		#Making the directory for the file.
-		workingdir='/home/comp/shlab/hschreiber/predicted_orfs/'+filename.rstrip('.fa')+'_glimresults'
-		#os.mkdir(workingdir)
+		# workingdir='/home/comp/shlab/hschreiber/predicted_orfs/'+filename.rstrip('.fa')+'_glimresults'
+		# #os.mkdir(workingdir)
 
 		#Setting the Glimmer command
-		glimmercmd='/home/comp/shlab/hschreiber/glimmer3.02/scripts/g3-iterated.csh /home/comp/shlab/hschreiber/assembled_genomes/'+filename+' '+workingdir+'/'+filename.rstrip('.fa')
+		glimmercmd='/home/comp/shlab/hschreiber/glimmer3.02/scripts/g3-iterated.csh /home/comp/shlab/hschreiber/assembled_genomes/'+filename+' '+sys.argv[2]+'/'+filename.rstrip('.fa')
 		subprocess.call(glimmercmd, shell=True)
 
-		if os.path.exists(workingdir+'/'+filename.rstrip('.fa')+'.predict')==True:
+		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'.predict')==True:
 			print ('Formatting '+filename.rstrip('.fa')+'.predict')
 
 			#Lets load the input file!
-			infile = open (workingdir+'/'+filename.rstrip('.fa')+'.predict')
+			infile = open (sys.argv[2]+'/'+filename.rstrip('.fa')+'.predict')
 			if infile == 0:
 				print ('There is a problem with the coordinates input file')
 				sys.exit()
 
-			outfile = open (workingdir+'/'+filename.rstrip('.fa')+'_formatted.predict','wt')
+			outfile = open (sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict','wt')
 			if outfile ==0:
 				print ('There is a problem with the formatted coordinates output file')
 				sys.exit()
@@ -66,10 +70,10 @@ for filename in files:
 			outfile.close()
 
 		#This section will perform the multi-extract command using the formatted coordinates file.  They will be placed in the output directory named in the command line.
-		if os.path.exists(workingdir+'/'+filename.rstrip('.fa')+'_formatted.predict')==True:
+		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict')==True:
 			print 'Extracting FASTA ORFs from '+filename
-			if os.path.exists(workingdir+'/'+filename.rstrip('.fa')+'_formatted.predict')==True:
-				multicmd='/home/comp/shlab/hschreiber/glimmer3.02/bin/multi-extract -w /home/comp/shlab/hschreiber/assembled_genomes/'+filename+' '+workingdir+'/'+filename.rstrip('.fa')+'_formatted.predict >'+workingdir+'/'+filename.rstrip('.fa')+'_ORFs.fa'
+			if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict')==True:
+				multicmd='/home/comp/shlab/hschreiber/glimmer3.02/bin/multi-extract -w /home/comp/shlab/hschreiber/assembled_genomes/'+filename+' '+sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict >'+sys.argv[2]+'/'+filename.rstrip('.fa')+'_ORFs.fa'
 				subprocess.call(multicmd, shell=True)
 				print 'FINISHED! with '+filename
 			else:

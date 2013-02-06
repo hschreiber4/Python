@@ -1,3 +1,6 @@
+#NOTE NOTE NOTE NOTE
+#This script is deprecated.  glimmer_orf_extraction.py replaces this funcitonality into one script.
+
 #This program will take the predicted coordinates from a Glimmer3.02 run on a multi-fasta file and turn it into the proper format for the multi-extract feature of the program.
 
 print ('Lets start choppin\'')
