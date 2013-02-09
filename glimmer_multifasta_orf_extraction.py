@@ -18,19 +18,14 @@ if len(sys.argv)!=3:
 #This section loads the files.
 files = os.listdir(sys.argv[1])
 
-# #This makes the directory
-# if os.path.exists(sys.argv[2])==False:
-# 	os.mkdir(sys.argv[2])
-# 	print ('Making the directory '+sys.argv[2])
+#This makes the directory. Still in testing
+if os.path.exists(sys.argv[2])==False:
+ 	os.mkdir(sys.argv[2])
+ 	print ('Making the directory '+sys.argv[2])
 
 for filename in files:
 	if filename.endswith('.fa'):
 		print 'Working on '+filename.rstrip('.fa')
-
-		#CHANGING workingdir TO sys.argv[2].IF FAILS, CHANGEBACK ALSO GOES HERE WITH THE MKDIR COMMAND COMMENTED.
-		#Making the directory for the file.
-		# workingdir='/home/comp/shlab/hschreiber/predicted_orfs/'+filename.rstrip('.fa')+'_glimresults'
-		# #os.mkdir(workingdir)
 
 		#Setting the Glimmer command
 		glimmercmd='/home/comp/shlab/hschreiber/glimmer3.02/scripts/g3-iterated.csh '+sys.argv[1]+'/'+filename+' '+sys.argv[2]+'/'+filename.rstrip('.fa')
