@@ -36,16 +36,12 @@ for filename in files:
 		glimmercmd='/home/comp/shlab/hschreiber/glimmer3.02/scripts/g3-iterated.csh '+sys.argv[1]+'/'+filename+' '+sys.argv[2]+'/'+filename.rstrip('.fa')
 		subprocess.call(glimmercmd, shell=True)
 
+#This section will take the glimmer predict coordinates and extract the ORF in a fasta format
 		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'.predict')==True:
-
-
-		#This section will perform the multi-extract command using the formatted coordinates file.  They will be placed in the output directory named in the command line.
-		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict')==True:
 			print 'Extracting FASTA ORFs from '+filename
-			if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict')==True:
-				multicmd='/home/comp/shlab/hschreiber/glimmer3.02/bin/multi-extract -w '+sys.argv[1]+'/'+filename+' '+sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict >'+sys.argv[2]+'/'+filename.rstrip('.fa')+'_ORFs.fa'
-				subprocess.call(multicmd, shell=True)
-				print 'FINISHED! with '+filename
-			else:
-				print 'There was an error opening the formatted coordinates file for '+filename
-				sys.exit()
+			extractcmd='/home/comp/shlab/hschreiber/glimmer3.02/bin/extract '+sys.argv[1]+'/'+filename+' '+sys.argv[2]+'/'+filename.rstrip('.fa')+'.predict >'+filename.rstrip('.fa')+'_ORFs.fa'
+			subprocess.call(extractcmd, shell=True)
+			print 'FINISHED! with '+filename
+		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'.predict')==False:
+			print 'There was an error opening the coordinates file for '+filename
+			sys.exit()
