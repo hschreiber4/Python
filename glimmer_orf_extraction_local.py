@@ -33,7 +33,7 @@ for filename in files:
 		# #os.mkdir(workingdir)
 
 		#Setting the Glimmer command
-		glimmercmd='/home/comp/shlab/hschreiber/glimmer3.02/scripts/g3-iterated.csh '+sys.argv[1]+'/'+filename+' '+sys.argv[2]+'/'+filename.rstrip('.fa')
+		glimmercmd='/Users/hschreiber4/other_applications/glimmer3.02/scripts/g3-iterated.csh /home/comp/shlab/hschreiber/assembled_genomes/'+filename+' '+sys.argv[2]+'/'+filename.rstrip('.fa')
 		subprocess.call(glimmercmd, shell=True)
 
 		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'.predict')==True:
@@ -74,7 +74,7 @@ for filename in files:
 		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict')==True:
 			print 'Extracting FASTA ORFs from '+filename
 			if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict')==True:
-				multicmd='/home/comp/shlab/hschreiber/glimmer3.02/bin/multi-extract -w '+sys.argv[1]+'/'+filename+' '+sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict >'+sys.argv[2]+'/'+filename.rstrip('.fa')+'_ORFs.fa'
+				multicmd='/Users/hschreiber4/other_applications/glimmer3.02/bin/multi-extract -w /home/comp/shlab/hschreiber/assembled_genomes/'+filename+' '+sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict >'+sys.argv[2]+'/'+filename.rstrip('.fa')+'_ORFs.fa'
 				subprocess.call(multicmd, shell=True)
 				print 'FINISHED! with '+filename
 			else:

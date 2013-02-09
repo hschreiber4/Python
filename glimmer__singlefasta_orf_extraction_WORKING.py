@@ -37,38 +37,7 @@ for filename in files:
 		subprocess.call(glimmercmd, shell=True)
 
 		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'.predict')==True:
-			print ('Formatting '+filename.rstrip('.fa')+'.predict')
 
-			#Lets load the input file!
-			infile = open (sys.argv[2]+'/'+filename.rstrip('.fa')+'.predict')
-			if infile == 0:
-				print ('There is a problem with the coordinates input file')
-				sys.exit()
-
-			outfile = open (sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict','wt')
-			if outfile ==0:
-				print ('There is a problem with the formatted coordinates output file')
-				sys.exit()
-
-			#Lets read the file, line by line for greater tractability of the information
-			while True:
-
-				line = infile.readline().rstrip()
-				if re.search('>',line):
-					header = line.strip('>')
-					continue
-				
-				#When the file runs out of lines, end the while loop
-				if line == (''):
-					break
-			#This section is a horribly inelegent way of reformatting the columns of the prediction coordinates.
-				else:
-					split = line.split()
-					if split != 1:
-						combined = split[0] + '     ' + header + '     ' + split[1] + '     ' + split[2]  + '     ' + split[3]  + '     ' + split[4] + '\n'
-						outfile.write(combined)
-			infile.close()
-			outfile.close()
 
 		#This section will perform the multi-extract command using the formatted coordinates file.  They will be placed in the output directory named in the command line.
 		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'_formatted.predict')==True:
