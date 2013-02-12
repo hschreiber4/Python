@@ -3,7 +3,7 @@ import subprocess
 import os
 import re
 
-print '\n\n\n'+'This program will call fall in a directory and pass them through Glimmer and multi-extract.  This script is meant for E5B2 - Sequencing of Clinical Isolates.'+'\n'
+print '\n\n\n'+'This program will call all the files in a directory and pass them through Glimmer and multi-extract.  This script is meant for E5B2 - Sequencing of Clinical Isolates.'+'\n'
 
 #A usage statement to tell the user how to use the script
 if len(sys.argv)!=3:
