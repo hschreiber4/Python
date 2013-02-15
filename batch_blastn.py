@@ -32,6 +32,7 @@ for filename in files:
 			infile = open (sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results.txt')
 			outfile = open (sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results_edited.txt', 'wt')
 
+
 			id_list=[]	
 			orf_list=[]
 			for line in infile:
