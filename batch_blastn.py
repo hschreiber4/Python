@@ -33,25 +33,15 @@ for filename in files:
 			outfile = open (sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results_edited.txt', 'wt')
 
 
-			id_list=[]	
-			orf_list=[]
 			for line in infile:
-				line_parts=line.split('\t')
-				id_parts=line_parts[0].split('_')
-				if any(id_parts[0] in s for s in id_list):
-					continue
-				else:
-					outfile.write(line)
-				id_list.append(id_parts[0])
-				orf_list.append(id_parts[1])
-				
-
-				#This section writes to the file unless the length of the ORF matched by the query is much longer than the subject query, which is an indication of a spurious result.  This arises because glimmer contains predicted genes within other genes, which is not good news.
-				# limit= int(line_parts[4])+1000
-				# if int(line_parts[5])<int(limit):
-				# 	outfile.write(line)
+				line_parts = line.split('\t')
+				print 'Query Length for '+line_parts[0].split('_')[0]+' is '+line_parts[5]
+				print 'Subject Length for '+line_parts[0].split('_')[0]+' is '+line_parts[4]
+				limit= int(line_parts[4])+1000
+				if int(line_parts[5])<int(limit):
+					outfile.write(line))
 					
 		#Killing the program if it doesn't make the file.
-		# else os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results.txt')==False:
-		# 	print 'There was a problem making the blastn results file for '+filename.rstrip('.fa')
-		# 	sys.exit()
+		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results.txt')==False:
+			print 'There was a problem making the blastn results file for '+filename.rstrip('.fa')
+			sys.exit()
