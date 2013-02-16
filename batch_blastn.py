@@ -30,7 +30,8 @@ for strain in strain_list:
 #Starting the loop to look for files.
 for filename in files:
 	if filename.endswith('.fa'):
-		id_list=duplicate_checklist=[]
+		id_list=[]
+		duplicate_checklist=[]
 		print 'Working on '+filename.rstrip('.fa')
 
 		# #Setting the blastn command
@@ -42,7 +43,7 @@ for filename in files:
 			print 'blastn results file created for '+filename.rstrip('.fa')
 
 			#Adding the file tested to the Results section
-			results_file.write(filename.rstrip('.fa'))
+			results_file.write('\n'+filename.rstrip('.fa'))
 			
 			#This section will search the orfs and put the presence or absence in a blastn results file
 			infile = open (sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results.txt')
@@ -55,9 +56,10 @@ for filename in files:
 			print filename.rstrip('.fa')+' is found in the genomes '+str(id_list)
 
 			for name in id_list:
-				# if any(name in x for x in duplicate_checklist):
-				# 	results_file.write('**NEEDS ATTENTION**')
-				if any(name in s for s in strain_list):
+				# for dup in duplicate_checklist:
+				# 	if name in dup:
+				# 		results_file.write('**NEEDS ATTENTION**')
+				if name in s for s in strain_list:
 					results_file.write('\t1')
 				else:
 					results_file.write('\t0')
