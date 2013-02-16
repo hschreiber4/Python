@@ -40,10 +40,7 @@ for filename in files:
 		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results.txt')==True:
 			print 'blastn results file created for '+filename.rstrip('.fa')
 			infile = open (sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results.txt')
-			outfile = open (sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results_edited.txt', 'wt')
 			
-			#Let's write some headers!
-			outfile.write('SubjectID\tEvalue\tBitscore\tPercentID\tQueryLength\tSubjectLength\tQueryStart\tQueryEnd\tSubjectStart\tSubjectEnd\tSubjectSeq\n')
 
 			#This section will remove hits from ORFs that are not meant to be there in the first place, due to glimmer's idiosyncracies.
 			for line in infile:
