@@ -1,6 +1,7 @@
 import sys
 import os
 
+#This script will rename the files in a script.  Used in E5B2 to rename the headers of the ORFs and Assembly files rather than having to grep each file individually.
 if len(sys.argv)!=2:
 	print '\n'+'\n'+'\n'+'To use this script, type: python rename.py {directory of query sequences[USE THE FULL PATH WITH NO END SLASH]}'
 	if len(sys.argv)<2:
