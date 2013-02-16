@@ -33,9 +33,9 @@ for filename in files:
 	if filename.endswith('.fa'):
 		print 'Working on '+filename.rstrip('.fa')
 
-		# #Setting the blastn command
-		# blastn_cmd='blastn -db UPEC_TOP_Genomes_db -query '+sys.argv[1]+'/'+filename+' -outfmt "6 sseqid evalue bitscore pident qlen slen qstart qend sstart send sseq">'+sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results.txt'
-		# subprocess.call(blastn_cmd, shell=True)
+		#Setting the blastn command
+		blastn_cmd='blastn -db UPEC_TOP_Genomes_db -query '+sys.argv[1]+'/'+filename+' -outfmt "6 sseqid evalue bitscore pident qlen slen qstart qend sstart send sseq">'+sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results.txt'
+		subprocess.call(blastn_cmd, shell=True)
 
 		#Checking to see if file exists
 		if os.path.exists(sys.argv[2]+'/'+filename.rstrip('.fa')+'_blastn_results.txt')==True:
