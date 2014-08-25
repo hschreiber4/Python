@@ -1,5 +1,0 @@
-Gene_list	Gene1	Gene2	Gene3	Gene4
-StrainA	1	1	1	0
-StrainB	1	0	1	0
-StrainC	1	0	0	0
-StrainD	1	1	0	0

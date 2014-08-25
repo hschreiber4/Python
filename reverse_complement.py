@@ -20,5 +20,7 @@ for line in infile:
 	if line.startswith('>'):
 		print line.replace('\n','')
 	else:
-		print line[::-1].upper().translate(string.maketrans('ATCGatcg','TAGCtagc'))
+		# print line
+		# print line[::-1]
+		print line[::-1].upper().translate(string.maketrans('ACTG','TGAC'))
 
